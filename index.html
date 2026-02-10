@@ -5,53 +5,88 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home - Data Acrobats</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { border-bottom: 1px solid #ccc; padding-bottom: 20px; margin-bottom: 20px; }
-        nav ul { list-style: none; padding: 0; display: flex; gap: 20px; }
-        h1 { color: #316DA1; }
-        .service-list { list-style-type: none; padding: 0; }
-        .service-item { margin-bottom: 15px; }
-        .cta { background: #f4f4f4; padding: 20px; border-radius: 5px; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
+        #container { max-width: 1000px; margin: 0 auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        header { padding: 20px; border-bottom: 1px solid #eee; text-align: center; }
+        .logo-container { margin-bottom: 10px; }
+        .logo { max-width: 250px; height: auto; }
+        .phone { font-size: 0.9em; color: #666; margin-bottom: 10px; }
+        
+        nav { background: #333; padding: 10px 0; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 30px; }
+        nav a { text-decoration: none; color: white; font-weight: bold; font-size: 0.9em; text-transform: uppercase; }
+        nav a:hover, nav a.active { color: #316DA1; }
+
+        .splash-container { width: 100%; height: 250px; overflow: hidden; position: relative; border-bottom: 5px solid #316DA1; }
+        .splash-img { width: 100%; height: 100%; object-fit: cover; }
+
+        .content-area { display: flex; padding: 40px 20px; gap: 40px; }
+        main { flex: 7; }
+        aside { flex: 3; background: #f9f9f9; padding: 20px; border-radius: 5px; height: fit-content; }
+
+        h1 { color: #316DA1; font-size: 1.8em; margin-top: 0; }
+        h2 { color: #316DA1; font-size: 1.4em; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        .service-list { list-style: none; padding: 0; }
+        .service-item { margin-bottom: 20px; padding-left: 25px; position: relative; }
+        .service-item::before { content: "✔"; position: absolute; left: 0; color: #316DA1; font-weight: bold; }
+
+        footer { background: #333; color: #ccc; padding: 30px 20px; text-align: center; font-size: 0.8em; }
+        footer a { color: #fff; text-decoration: none; }
+
+        @media (max-width: 768px) {
+            .content-area { flex-direction: column; }
+            nav ul { gap: 15px; }
+        }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Data Acrobats</h1>
-        <p>(224) 263-0905 x1</p>
+    <div id="container">
+        <header>
+            <div class="phone">(224) 263-0905 x1</div>
+            <div class="logo-container">
+                <a href="index.html"><img src="images/logo.png" alt="Data Acrobats" class="logo"></a>
+            </div>
+        </header>
+
         <nav>
             <ul>
-                <li><strong>Home</strong></li>
+                <li><a href="index.html" class="active">Home</a></li>
                 <li><a href="clients.html">Clients</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-    </header>
 
-    <main>
-        <section>
-            <h1>Harness Generative AI with a Fractional CTO</h1>
-            <p>A fractional CTO provides part-time strategic technology leadership, ideal for businesses looking to adopt Generative AI without the cost of a full-time executive. With over 20 years of experience, including selling a no-code software company and managing a SaaS firm, our Fractional CTO can guide your organization to success.</p>
-        </section>
+        <div class="splash-container">
+            <img src="images/splash.jpg" alt="Strategic Technology" class="splash-img">
+        </div>
 
-        <section>
-            <h2>Our Services</h2>
-            <ul class="service-list">
-                <li class="service-item"><strong>Implement secure and compliant AI solutions:</strong> Work with us to integrate Generative AI that aligns with your business goals while ensuring data privacy and regulatory compliance.</li>
-                <li class="service-item"><strong>Discover high-impact AI opportunities:</strong> Identify where Generative AI can transform your operations, from automating content creation to enhancing customer service with AI chatbots.</li>
-                <li class="service-item"><strong>Upskill your team for AI success:</strong> Develop a tailored training program to build AI literacy and advanced skills across your organization.</li>
-                <li class="service-item"><strong>Leverage proven expertise:</strong> Benefit from a technologist with 20+ years of experience, a successful software company exit, and a patent in innovative technology.</li>
-            </ul>
-        </section>
+        <div class="content-area">
+            <main>
+                <h1>Harness Generative AI with a Fractional CTO</h1>
+                <p>A fractional CTO provides part-time strategic technology leadership, ideal for businesses looking to adopt Generative AI without the cost of a full-time executive. With over 20 years of experience, including selling a no-code software company and managing a SaaS firm, our Fractional CTO can guide your organization to success.</p>
 
-        <section class="cta">
-            <h2>Get Started</h2>
-            <p>Start your AI journey with flexible plans from $1000/month. Schedule a free 30-minute consultation to discuss your goals and how we can support you.</p>
-        </section>
-    </main>
+                <h2>Our Services</h2>
+                <ul class="service-list">
+                    <li class="service-item"><strong>Implement secure and compliant AI solutions:</strong> Work with us to integrate Generative AI that aligns with your business goals while ensuring data privacy and regulatory compliance.</li>
+                    <li class="service-item"><strong>Discover high-impact AI opportunities:</strong> Identify where Generative AI can transform your operations, from automating content creation to enhancing customer service with AI chatbots.</li>
+                    <li class="service-item"><strong>Upskill your team for AI success:</strong> Develop a tailored training program to build AI literacy and advanced skills across your organization.</li>
+                    <li class="service-item"><strong>Leverage proven expertise:</strong> Benefit from a technologist with 20+ years of experience, a successful software company exit, and a patent in innovative technology.</li>
+                </ul>
+            </main>
 
-    <footer>
-        <p>Data Acrobats, a vFlyer Inc company | 777 Brickell Ave, Suite 500-95334 | Miami | Florida | 33131</p>
-        <p>© 2026 All information in this site is deemed reliable but is not guaranteed and is subject to change.</p>
-    </footer>
+            <aside>
+                <h3>Get Started</h3>
+                <p>Start your AI journey with flexible plans from $1000/month.</p>
+                <p>Schedule a free 30-minute consultation to discuss your goals.</p>
+                <a href="contact.html" style="display: block; background: #316DA1; color: white; text-align: center; padding: 10px; text-decoration: none; border-radius: 3px; font-weight: bold;">Contact Us</a>
+            </aside>
+        </div>
+
+        <footer>
+            <p>Data Acrobats, a vFlyer Inc company | 777 Brickell Ave, Suite 500-95334 | Miami | Florida | 33131</p>
+            <p>&copy; 2026 All information in this site is deemed reliable but is not guaranteed and is subject to change.</p>
+        </footer>
+    </div>
 </body>
 </html>

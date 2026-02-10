@@ -5,61 +5,86 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Contact Us - Data Acrobats</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { border-bottom: 1px solid #ccc; padding-bottom: 20px; margin-bottom: 20px; }
-        nav ul { list-style: none; padding: 0; display: flex; gap: 20px; }
-        nav a { text-decoration: none; color: #333; }
-        h1 { color: #316DA1; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
+        #container { max-width: 1000px; margin: 0 auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        header { padding: 20px; border-bottom: 1px solid #eee; text-align: center; }
+        .logo-container { margin-bottom: 10px; }
+        .logo { max-width: 250px; height: auto; }
+        .phone { font-size: 0.9em; color: #666; margin-bottom: 10px; }
+        
+        nav { background: #333; padding: 10px 0; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 30px; }
+        nav a { text-decoration: none; color: white; font-weight: bold; font-size: 0.9em; text-transform: uppercase; }
+        nav a:hover, nav a.active { color: #316DA1; }
+
+        .content-area { padding: 40px 20px; display: flex; gap: 40px; }
+        .contact-form-section { flex: 7; }
+        .address-section { flex: 3; background: #f9f9f9; padding: 20px; border-radius: 5px; }
+
+        h1 { color: #316DA1; font-size: 1.8em; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
         form div { margin-bottom: 15px; }
-        label { display: block; margin-bottom: 5px; }
-        input[type="text"], input[type="email"], textarea { width: 100%; padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
-        button { background: #316DA1; color: white; padding: 10px 20px; border: none; border-radius: 4px; cursor: pointer; }
-        footer { margin-top: 40px; font-size: 0.9em; color: #666; }
+        label { display: block; margin-bottom: 5px; font-weight: bold; }
+        input[type="text"], input[type="email"], textarea { width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 3px; box-sizing: border-box; }
+        button { background: #316DA1; color: white; padding: 12px 25px; border: none; border-radius: 3px; cursor: pointer; font-weight: bold; font-size: 1em; }
+        button:hover { background: #265580; }
+
+        footer { background: #333; color: #ccc; padding: 30px 20px; text-align: center; font-size: 0.8em; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Data Acrobats</h1>
-        <p>(224) 263-0905 x1</p>
+    <div id="container">
+        <header>
+            <div class="phone">(224) 263-0905 x1</div>
+            <div class="logo-container">
+                <a href="index.html"><img src="images/logo.png" alt="Data Acrobats" class="logo"></a>
+            </div>
+        </header>
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="clients.html">Clients</a></li>
-                <li><strong>Contact Us</strong></li>
+                <li><a href="contact.html" class="active">Contact Us</a></li>
             </ul>
         </nav>
-    </header>
 
-    <main>
-        <h1>Contact Us</h1>
-        <form>
-            <div>
-                <label for="name">Full Name</label>
-                <input type="text" id="name" name="name" required>
+        <div class="content-area">
+            <div class="contact-form-section">
+                <h1>Contact Us</h1>
+                <form action="https://formspree.io/f/YOUR_ENDPOINT_HERE" method="POST">
+                    <div>
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div>
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="_replyto" required>
+                    </div>
+                    <div>
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="6" required></textarea>
+                    </div>
+                    <button type="submit">Submit Request</button>
+                </form>
             </div>
-            <div>
-                <label for="email">Email</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="message">Message</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-            </div>
-            <button type="submit">Send</button>
-        </form>
 
-        <section style="margin-top: 30px;">
-            <h3>Our Office</h3>
-            <p>Data Acrobats<br>
-            777 Brickell Ave, Suite 500-95334<br>
-            Miami, FL 33131<br>
-            (224) 263-0905 x1</p>
-        </section>
-    </main>
+            <div class="address-section">
+                <h3>Our Office</h3>
+                <p><strong>Data Acrobats</strong><br>
+                777 Brickell Ave<br>
+                Suite 500-95334<br>
+                Miami, FL 33131<br>
+                United States<br><br>
+                <strong>Phone:</strong><br>
+                (224) 263-0905 x1</p>
+            </div>
+        </div>
 
-    <footer>
-        <p>Data Acrobats, a vFlyer Inc company | 777 Brickell Ave, Suite 500-95334 | Miami | Florida | 33131</p>
-        <p>© 2026 All information in this site is deemed reliable but is not guaranteed and is subject to change.</p>
-    </footer>
+        <footer>
+            <p>Data Acrobats, a vFlyer Inc company | 777 Brickell Ave, Suite 500-95334 | Miami | Florida | 33131</p>
+            <p>&copy; 2026 All information in this site is deemed reliable but is not guaranteed and is subject to change.</p>
+        </footer>
+    </div>
 </body>
 </html>

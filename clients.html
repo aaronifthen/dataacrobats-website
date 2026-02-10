@@ -5,46 +5,62 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Clients - Data Acrobats</title>
     <style>
-        body { font-family: sans-serif; line-height: 1.6; max-width: 800px; margin: 0 auto; padding: 20px; }
-        header { border-bottom: 1px solid #ccc; padding-bottom: 20px; margin-bottom: 20px; }
-        nav ul { list-style: none; padding: 0; display: flex; gap: 20px; }
-        nav a { text-decoration: none; color: #333; }
-        h1 { color: #316DA1; }
-        .client-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-top: 20px; }
-        .client-item { background: #f9f9f9; padding: 10px; border-radius: 4px; }
-        footer { margin-top: 40px; font-size: 0.9em; color: #666; }
+        body { font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif; line-height: 1.6; color: #333; margin: 0; padding: 0; background-color: #f4f4f4; }
+        #container { max-width: 1000px; margin: 0 auto; background: white; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
+        header { padding: 20px; border-bottom: 1px solid #eee; text-align: center; }
+        .logo-container { margin-bottom: 10px; }
+        .logo { max-width: 250px; height: auto; }
+        .phone { font-size: 0.9em; color: #666; margin-bottom: 10px; }
+        
+        nav { background: #333; padding: 10px 0; }
+        nav ul { list-style: none; padding: 0; margin: 0; display: flex; justify-content: center; gap: 30px; }
+        nav a { text-decoration: none; color: white; font-weight: bold; font-size: 0.9em; text-transform: uppercase; }
+        nav a:hover, nav a.active { color: #316DA1; }
+
+        .content-area { padding: 40px 20px; min-height: 400px; }
+        h1 { color: #316DA1; font-size: 1.8em; border-bottom: 1px solid #eee; padding-bottom: 10px; }
+        
+        .client-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 15px; margin-top: 30px; }
+        .client-item { background: #f9f9f9; padding: 15px; border-left: 4px solid #316DA1; font-weight: bold; }
+
+        footer { background: #333; color: #ccc; padding: 30px 20px; text-align: center; font-size: 0.8em; }
     </style>
 </head>
 <body>
-    <header>
-        <h1>Data Acrobats</h1>
-        <p>(224) 263-0905 x1</p>
+    <div id="container">
+        <header>
+            <div class="phone">(224) 263-0905 x1</div>
+            <div class="logo-container">
+                <a href="index.html"><img src="images/logo.png" alt="Data Acrobats" class="logo"></a>
+            </div>
+        </header>
+
         <nav>
             <ul>
                 <li><a href="index.html">Home</a></li>
-                <li><strong>Clients</strong></li>
+                <li><a href="clients.html" class="active">Clients</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
             </ul>
         </nav>
-    </header>
 
-    <main>
-        <h1>Current and Past Clients</h1>
-        <div class="client-grid">
-            <div class="client-item">Charles Schwab & Co.</div>
-            <div class="client-item">Verizon</div>
-            <div class="client-item">JP Morgan Chase</div>
-            <div class="client-item">AAA of California</div>
-            <div class="client-item">Pioneer Electronics</div>
-            <div class="client-item">Internet Shopping Network</div>
-            <div class="client-item">vFlyer Inc</div>
-            <div class="client-item">Accenture</div>
+        <div class="content-area">
+            <h1>Current and Past Clients</h1>
+            <div class="client-grid">
+                <div class="client-item">Charles Schwab & Co.</div>
+                <div class="client-item">Verizon</div>
+                <div class="client-item">JP Morgan Chase</div>
+                <div class="client-item">AAA of California</div>
+                <div class="client-item">Pioneer Electronics</div>
+                <div class="client-item">Internet Shopping Network</div>
+                <div class="client-item">vFlyer Inc</div>
+                <div class="client-item">Accenture</div>
+            </div>
         </div>
-    </main>
 
-    <footer>
-        <p>Data Acrobats, a vFlyer Inc company | 777 Brickell Ave, Suite 500-95334 | Miami | Florida | 33131</p>
-        <p>© 2026 All information in this site is deemed reliable but is not guaranteed and is subject to change.</p>
-    </footer>
+        <footer>
+            <p>Data Acrobats, a vFlyer Inc company | 777 Brickell Ave, Suite 500-95334 | Miami | Florida | 33131</p>
+            <p>&copy; 2026 All information in this site is deemed reliable but is not guaranteed and is subject to change.</p>
+        </footer>
+    </div>
 </body>
 </html>
